@@ -2,6 +2,7 @@ import sys
 sys.path.append('../src')
 import unittest
 from users_management import UsersManager
+
 class TestUserManagement(unittest.TestCase):
 
     def test_create_users_table(self):

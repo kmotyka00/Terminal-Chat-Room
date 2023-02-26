@@ -1,12 +1,5 @@
 import socket
-
-HEADER = 64 # first message to the server will have 64 bytes and tell the length of the message 
-PORT = 5054
-SERVER = "192.168.56.1"
-ADDR = (SERVER, PORT)
-FORMAT = 'utf-8'
-DISCONNECT_MESSAGE = "!DISCONNECT"
-
+from settings import HEADER, ADDR, FORMAT
 
 class Message:
     def __init__(self, msg):
@@ -35,8 +28,5 @@ class Client:
 
     def loop(self):
         while True:
-            message = input()
+            message = input("Write message: ")
             self.send_message(message)
-
-# client = Client()
-# client.loop()
